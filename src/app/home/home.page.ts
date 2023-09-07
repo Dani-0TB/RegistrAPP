@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,18 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  user: any;
 
+  constructor(private router: Router, private alertController: AlertController) {
+    let data = this.router.getCurrentNavigation()?.extras.state;
+    console.log(data) 
+    if (data && data['user']){
+        this.user = data['user'];
+    }
+  }
+
+  logout(){
+    this.router.navigate(['/login'])
+  }
+  
 }

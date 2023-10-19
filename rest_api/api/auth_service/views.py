@@ -28,8 +28,11 @@ class Login(APIView):
         token, created = Token.objects.get_or_create(user=user)
         return Response({"user":request.data["username"],"token": token.key}, status.HTTP_202_ACCEPTED)
 
-from rest_framework.authentication import TokenAuthentication, SessionAuthentication
+from rest_framework.authentication import SessionAuthentication, TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 class AutenticarToken(APIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [SessionAuthentication, TokenAuthentication]
     def get(self, request):
-        return Response({})
+        return Response({f"passed for {request.user.email}"})

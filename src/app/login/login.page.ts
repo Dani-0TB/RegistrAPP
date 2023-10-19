@@ -33,6 +33,8 @@ export class LoginPage implements OnInit {
       return
     }
     
+    
+
     const alert = await this.alertController.create({
       header: 'Error al inicial sesión',
       message: error,

@@ -10,7 +10,7 @@ export class AuthenticationService {
 
   isLoggedIn = false;
   session: any = {user: "Anonymous", token: "none"};
-  private apiURL: string = 'http://localhost:8000/api-auth/'
+  private apiURL: string = 'http://localhost:8000/api/auth/'
   private httpOptions = {headers: new HttpHeaders({
     "Content-Type": "application/json"
   }),

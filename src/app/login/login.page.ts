@@ -44,14 +44,14 @@ export class LoginPage implements OnInit {
           this.authService.session = response.body;
           let session = response.body;
           if (session) {
-            localStorage.setItem("session", session.toString())
+            localStorage.setItem("session", JSON.stringify(session))
           }
           this.router.navigate(['/home'])
         },
-        error: async (error) => {
+        error: async (response) => {
           const alert = await this.alertController.create({
             header: 'Error al inicial sesión',
-            message: error,
+            message: 'Verifique sus credenciales',
             buttons: ['OK'],
           });
           await alert.present();

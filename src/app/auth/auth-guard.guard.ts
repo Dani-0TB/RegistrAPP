@@ -11,12 +11,12 @@ export const authGuard: CanActivateFn = async (route, state) => {
   if (authService.isLoggedIn) {
     return true;
   }
-
+  console.log("No esta iniciada la sesión")
   let session_str = localStorage.getItem("session");
   if (session_str) {
-    let session = JSON.parse(session_str);
-    authService.session = session;
+    authService.session = JSON.parse(session_str);
     authService.isLoggedIn = true;
+    console.log(authService.session)
     return true;
   }
   

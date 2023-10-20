@@ -42,6 +42,10 @@ export class LoginPage implements OnInit {
         next: (response) => {
           this.authService.isLoggedIn = true;
           this.authService.session = response.body;
+          let session = response.body;
+          if (session) {
+            localStorage.setItem("session", session.toString())
+          }
           this.router.navigate(['/home'])
         },
         error: async (error) => {
@@ -55,5 +59,4 @@ export class LoginPage implements OnInit {
       });
     }
   }
-
 }

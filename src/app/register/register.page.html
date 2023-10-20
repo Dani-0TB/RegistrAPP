@@ -6,6 +6,7 @@
   <div class="ion-text-center">
     
     <h1>¡Bienvenido!</h1>
+    <h2>Ingrese sus datos para registrarse</h2>
     
     <ion-list lines="none" class="ion-padding rounded" id="logbox">
       <ion-item>
@@ -15,23 +16,20 @@
         labelPlacement="floating"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input [(ngModel)]="password"
+        <ion-input [(ngModel)]="password" 
         label="Contraseña" 
-        labelPlacement="floating" 
-        type="password" 
-        placeholder="Ingrese Contraseña"></ion-input>
+        placeholder="Ingrese contraseña" 
+        labelPlacement="floating" type="password"></ion-input>
       </ion-item>
-      <ion-button class="ion-margin-top" color="dark" expand="block" (click)="login()">Ingresar</ion-button>
+      <ion-item>
+        <ion-input [(ngModel)]="email" 
+        label="Nombre de Usuario" 
+        placeholder="Ingrese Nombre de Usuario" 
+        labelPlacement="floating"></ion-input>
+      </ion-item>
+      
+      <ion-button class="ion-margin-top" color="dark" expand="block" >Ingresar</ion-button>
     </ion-list>
-    <p>
-      <ion-text> ¿Olvidaste tu contraseña? <br>
-      <a routerLink="/forget-password">Recuperar contraseña</a></ion-text>
-    </p>
-    <p>
-      <ion-text> ¿No tienes una cuenta? <br>
-      <a routerLink="/register">Registrate aquí</a></ion-text>
-    </p>
-    
 
   </div>
 </ion-content>

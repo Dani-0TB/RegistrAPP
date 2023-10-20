@@ -10,24 +10,23 @@
     
     <ion-list lines="none" class="ion-padding rounded" id="logbox">
       <ion-item>
-        <ion-input [(ngModel)]="user" 
+        <ion-input [(ngModel)]="userRegister.username" 
         label="Nombre de Usuario" 
         placeholder="Ingrese Nombre de Usuario" 
         labelPlacement="floating"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input [(ngModel)]="password" 
+        <ion-input [(ngModel)]="userRegister.email" 
+        label="Nombre de Usuario" 
+        placeholder="Ingrese Nombre de Usuario" 
+        labelPlacement="floating"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="userRegister.password" 
         label="Contraseña" 
         placeholder="Ingrese contraseña" 
         labelPlacement="floating" type="password"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-input [(ngModel)]="email" 
-        label="Nombre de Usuario" 
-        placeholder="Ingrese Nombre de Usuario" 
-        labelPlacement="floating"></ion-input>
-      </ion-item>
-      
       <ion-button class="ion-margin-top" color="dark" expand="block" >Ingresar</ion-button>
     </ion-list>
 

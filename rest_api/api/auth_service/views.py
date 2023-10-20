@@ -17,7 +17,7 @@ class Registrar(APIView):
             nuevo_user.set_password(request.data['password'])
             nuevo_user.save()
             token = Token.objects.create(user=nuevo_user)
-            return Response({"token": token.key, "user":serializer.data}, status.HTTP_201_CREATED)
+            return Response({"user":serializer.data, "token": token.key}, status.HTTP_201_CREATED)
         return Response(serializer.errors, status.HTTP_400_BAD_REQUEST)
 
 class Login(APIView):

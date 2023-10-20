@@ -17,8 +17,7 @@ export class AuthenticationService {
   observe: 'response' as 'response'
   };
   constructor(
-    private http: HttpClient,
-    private storage: Storage
+    private http: HttpClient
   ) { }
 
   login(user: User) {
@@ -35,6 +34,5 @@ export class AuthenticationService {
 
   logout(): void {
     this.isLoggedIn = false;
-    this.storage.clear();
   }
 }

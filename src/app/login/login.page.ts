@@ -27,7 +27,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  async login(){
+  login(){
 
     let error: string = '';
 

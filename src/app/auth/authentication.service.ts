@@ -27,7 +27,7 @@ export class AuthenticationService {
   }
 
   register(registerForm: UserRegister) {
-    return this.http.post(this.apiURL + 'signup', registerForm, this.httpOptions).pipe(
+    return this.http.post(this.apiURL + 'registrar', registerForm, this.httpOptions).pipe(
       retry(3)
     );
   }

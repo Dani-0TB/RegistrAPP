@@ -27,7 +27,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  async login(){
+  login(){
 
     let error: string = '';
 
@@ -42,12 +42,16 @@ export class LoginPage implements OnInit {
         next: (response) => {
           this.authService.isLoggedIn = true;
           this.authService.session = response.body;
+          let session = response.body;
+          if (session) {
+            localStorage.setItem("session", JSON.stringify(session))
+          }
           this.router.navigate(['/home'])
         },
-        error: async (error) => {
+        error: async (response) => {
           const alert = await this.alertController.create({
             header: 'Error al inicial sesión',
-            message: error,
+            message: 'Verifique sus credenciales',
             buttons: ['OK'],
           });
           await alert.present();
@@ -55,5 +59,4 @@ export class LoginPage implements OnInit {
       });
     }
   }
-
 }

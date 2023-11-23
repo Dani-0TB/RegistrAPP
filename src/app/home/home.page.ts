@@ -15,7 +15,16 @@ export class HomePage {
     private authService: AuthenticationService,
     private router: Router
     ) {
-    this.session = this.authService.session
+  }
+
+  ngOnInit()
+  {
+    this.session = this.authService.session;
+  }
+
+  ionViewWillEnter()
+  {
+    this.session = this.authService.session;
   }
 
   logout(){

@@ -4,14 +4,9 @@ import { authGuard } from './auth/auth-guard.guard';
 
 const routes: Routes = [
   {
-    path: 'home',
-    canActivate: [authGuard],
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    redirectTo: 'login'
   },
   {
     path: 'login',
@@ -25,7 +20,15 @@ const routes: Routes = [
     path: 'forget-password',
     loadChildren: () => import('./forget-password/forget-password.module').then( m => m.ForgetPasswordPageModule)
   },
-
+  {
+    path: 'home',
+    canActivate: [authGuard],
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: "**",
+    loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
+  },
 ];
 
 @NgModule({

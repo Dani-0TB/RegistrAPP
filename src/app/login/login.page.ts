@@ -29,7 +29,7 @@ export class LoginPage implements OnInit {
     }
     else{
       let navigationExtras: NavigationExtras = {state:{user:this.user}}
-      this.router.navigate(['/home'], navigationExtras);
+      this.router.navigate(['/alumno'], navigationExtras);
       return
     }
     

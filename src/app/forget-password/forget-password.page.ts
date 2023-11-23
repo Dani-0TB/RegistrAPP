@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-forget-password',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgetPasswordPage implements OnInit {
 
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
+

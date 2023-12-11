@@ -31,5 +31,4 @@ export class HomePage {
     localStorage.clear()
     this.router.navigate(['/login'])
   }
-  
 }

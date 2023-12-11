@@ -9,13 +9,13 @@
     
     <ion-list lines="none" class="ion-padding rounded" id="logbox">
       <ion-item>
-        <ion-input [(ngModel)]="user" 
+        <ion-input [(ngModel)]="user.username" 
         label="Nombre de Usuario" 
         placeholder="Ingrese Nombre de Usuario" 
         labelPlacement="floating"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input [(ngModel)]="password"
+        <ion-input [(ngModel)]="user.password"
         label="Contraseña" 
         labelPlacement="floating" 
         type="password" 
@@ -31,7 +31,5 @@
       <ion-text> ¿No tienes una cuenta? <br>
       <a routerLink="/register">Registrate aquí</a></ion-text>
     </p>
-    
-
   </div>
 </ion-content>

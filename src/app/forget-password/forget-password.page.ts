@@ -7,13 +7,7 @@ import { AlertController, ModalController } from '@ionic/angular';
   styleUrls: ['./forget-password.page.scss'],
 })
 export class ForgetPasswordPage implements OnInit {
-
-
   constructor() { }
-
   ngOnInit() {
-
   }
-
 }
-

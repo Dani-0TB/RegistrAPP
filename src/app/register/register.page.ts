@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { UserRegister } from '../auth/user';
 import { AuthenticationService } from '../auth/authentication.service';
 import { Router } from '@angular/router';
@@ -43,5 +44,4 @@ export class RegisterPage implements OnInit {
       }
     });
   }
-  
 }

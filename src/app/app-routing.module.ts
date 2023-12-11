@@ -28,6 +28,10 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: 'alumno',
+    loadChildren: () => import('./alumno/alumno.module').then( m => m.AlumnoPageModule)
+  },
+  {
     path: "**",
     loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
   },

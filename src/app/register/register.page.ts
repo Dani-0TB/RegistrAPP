@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { UserRegister } from '../auth/user';
 import { AuthenticationService } from '../auth/authentication.service';
 import { Router } from '@angular/router';
@@ -35,7 +36,7 @@ export class RegisterPage implements OnInit {
       },
       error: async (error) => {
         const alert = await this.alertController.create({
-          header: 'Error al inicial sesión',
+          header: 'Error al crear usuario',
           message: error,
           buttons: ['OK'],
         });
@@ -43,5 +44,4 @@ export class RegisterPage implements OnInit {
       }
     });
   }
-  
 }

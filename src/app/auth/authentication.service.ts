@@ -9,8 +9,8 @@ import { retry } from 'rxjs';
 export class AuthenticationService {
 
   isLoggedIn = false;
-  session: any = {user: "Anonymous", token: "none"};
-  private apiURL: string = 'http://localhost:8000/api/auth/'
+  session: any = {user: "Anonymous", token: "none", "rol":"anonimo"};
+  private apiURL: string = 'https://regirst-api.onrender.com/api/auth/'
   private httpOptions = {headers: new HttpHeaders({
     "Content-Type": "application/json"
   }),
@@ -27,7 +27,7 @@ export class AuthenticationService {
   }
 
   register(registerForm: UserRegister) {
-    return this.http.post(this.apiURL + 'signup', registerForm, this.httpOptions).pipe(
+    return this.http.post(this.apiURL + 'registrar', registerForm, this.httpOptions).pipe(
       retry(3)
     );
   }

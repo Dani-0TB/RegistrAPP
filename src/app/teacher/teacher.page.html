@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Profesor</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Logout</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h1 class="ion-padding">Bienvenido {{ session.user }}</h1>
+  <div *ngIf="qrGenerado" class="ion-padding-horizontal ion-text-center">
+    <qrcode [qrdata]="numqr" [width]="200"></qrcode>
+  </div>
+  
+  <div *ngFor="let clase of clases.clases" class="ion-padding-horizontal">
+    <ion-card class="ion-padding">
+      <ion-card-header>
+        {{ clase.nombre }}
+      </ion-card-header>
+      <ion-button (click)="generarQR(clase.id)">
+        Generar QR
+      </ion-button>
+      <ion-button (click)="verAsistencia(clase.id, clase.nombre)">
+        Mostrar Asistencia
+      </ion-button>
+    </ion-card>
+  </div>
+  <div *ngIf="mostrarAsistencia" class="ion-padding-horizontal ion-text-center">
+    <h3>Asistencia</h3>
+    <p>{{nombreClase}}</p>
+    <div *ngFor="let alumno of lista.listaAlumnos">
+      <ion-card class="ion-padding">
+        <ion-card-header>
+          {{ alumno.nombre }}
+        </ion-card-header>
+        <ion-card-content>
+          <p *ngIf="alumno.presente == 'True'" >Presente</p>
+          <p *ngIf="alumno.presente == 'False'" >Ausente</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

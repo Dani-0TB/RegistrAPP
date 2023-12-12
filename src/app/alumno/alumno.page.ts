@@ -15,6 +15,7 @@ export class AlumnoPage {
   isSupported = false;
   barcodes: Barcode[] = [];
   session: any;
+  idClase: number = 0;
 
   constructor(
     private alertController: AlertController, 
@@ -65,5 +66,9 @@ export class AlumnoPage {
   logout(){
     localStorage.clear()
     this.router.navigate(['login'])
+  }
+
+  registrarAsistencia(){
+    this.asistenciaService.confirmarAsistencia(this.idClase,this.session.user).subscribe()
   }
 }

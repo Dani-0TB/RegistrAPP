@@ -16,22 +16,31 @@
     </ion-toolbar>
   </ion-header>
 
-  
   <h1 class="ion-text-center">Bienvenido Estudiante:</h1>
-<ion-list>
+  <ion-list lines="none" class="ion-padding rounded" id="logbox">
     <ion-item>
-      <ion-avatar>
-        <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="">
-      </ion-avatar>
+      <ion-input [(ngModel)]="idClase"
+      type="number"
+      label="idClase" 
+      placeholder="Ingrese la id de la clse"
+      labelPlacement="floating"></ion-input>
     </ion-item>
-    <div class="content">
-      <ion-item class="rounded">
-        <ion-button class="" expand="block" fill="clear" shape="solid" size="large" (click)="scan()">
-          Abrir camara
-          <ion-icon slot="start" name="camera"></ion-icon>
-        </ion-button>
-      </ion-item>
-    </div>
+    <ion-button class="ion-margin-top" color="dark" expand="block" (click)="registrarAsistencia()">Registrar Asistencia</ion-button>
   </ion-list>
+  <ion-list>
+      <ion-item>
+        <ion-avatar>
+          <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="">
+        </ion-avatar>
+      </ion-item>
+      <div class="content">
+        <ion-item class="rounded">
+          <ion-button class="" expand="block" fill="clear" shape="solid" size="large" (click)="scan()">
+            Abrir camara
+            <ion-icon slot="start" name="camera"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </div>
+    </ion-list>
   
 </ion-content>

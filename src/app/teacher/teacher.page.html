@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>teacher</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      Datos Personales
+    </ion-card-header>
+
+    <ion-button (click)="editarDatos()">
+      Editar Datos
+    </ion-button>
+  </ion-card>
+
+  <ion-card ngFor="let clase of clases">
+    <ion-card-header>
+      {{ user }}
+    </ion-card-header>
+    <ion-card>
+      <ion-card-header>
+        QR
+      </ion-card-header>
+
+      <ion-button (click)="generarQR()">
+        Generar QR
+      </ion-button>
+    </ion-card>
+  </ion-card>
+  <ion-card>
+      <ion-card-header>
+        QR
+      </ion-card-header>
+
+      <ion-button (click)="generarQR()">
+        Generar QR
+      </ion-button>
+      <qrcode [qrdata]="asistencia" [width]="200"></qrcode>
+    </ion-card>
+</ion-content>

@@ -29,10 +29,12 @@ const routes: Routes = [
   },
   {
     path: 'alumno',
+    canActivate: [authGuard],
     loadChildren: () => import('./alumno/alumno.module').then( m => m.AlumnoPageModule)
   },
   {
     path: 'teacher',
+    canActivate: [authGuard],
     loadChildren: () => import('./teacher/teacher.module').then( m => m.TeacherPageModule)
   },
   {

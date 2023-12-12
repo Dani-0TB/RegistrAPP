@@ -13,7 +13,11 @@ export const loginGuard: CanActivateFn = async (route, state) => {
     authService.session = JSON.parse(session_str);
     authService.isLoggedIn = true;
     console.log(authService.session)
-    return router.parseUrl('home');
+    if (authService.session.rol == "profesor")
+    {
+      return router.parseUrl('teacher')
+    }
+    return router.parseUrl('alumno');
   }
   
   // Redirect to the login page

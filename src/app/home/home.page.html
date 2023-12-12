@@ -18,10 +18,14 @@
 
   <h1 class="ion-text-center">Página de usuario</h1>
 
-  <div class="content">
-    <ion-item class="rounded">
+  <div class="content rounded">
+    <ion-item>
       <ion-label>Usuario</ion-label>
       <ion-text class="ion-text-end">{{this.session.user }}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tipo de usuario</ion-label>
+      <ion-text class="ion-text-end">{{this.session.rol }}</ion-text>
     </ion-item>
   </div>
 </ion-content>
